@@ -9,9 +9,9 @@ interface EventCardProps {
 
 export function EventCard({ event }: EventCardProps) {
   const formatDeadline = (deadline: string | null) => {
-    if (!deadline) return 'Tidak ditentukan';
+    if (!deadline) return 'Not specified';
     const date = new Date(deadline);
-    return date.toLocaleDateString('id-ID', {
+    return date.toLocaleDateString('en-US', {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
@@ -60,9 +60,8 @@ export function EventCard({ event }: EventCardProps) {
               </span>
               {change24h !== 0 && (
                 <span
-                  className={`text-xs flex items-center gap-0.5 ${
-                    change24h > 0 ? 'text-status-opportunity' : 'text-status-risk'
-                  }`}
+                  className={`text-xs flex items-center gap-0.5 ${change24h > 0 ? 'text-status-opportunity' : 'text-status-risk'
+                    }`}
                 >
                   {change24h > 0 ? (
                     <TrendingUp className="w-3 h-3" />

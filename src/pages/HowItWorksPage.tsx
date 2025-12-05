@@ -15,30 +15,30 @@ export function HowItWorksPage() {
   const steps = [
     {
       icon: Database,
-      title: 'Membaca Data dari Kalshi',
+      title: 'Reading Data from Kalshi',
       description:
-        'Kalshi Pulse secara berkala mengambil data market dari platform Kalshi. Data yang diambil meliputi probabilitas YES/NO, volume transaksi, pergerakan harga, dan informasi event.',
+        'Kalshi Pulse periodically fetches market data from the Kalshi platform. Data includes YES/NO probabilities, transaction volume, price movements, and event information.',
       color: 'ocean-seafoam',
     },
     {
       icon: TrendingUp,
-      title: 'Mengamati Pergerakan',
+      title: 'Observing Movements',
       description:
-        'Data disimpan secara historis sehingga memungkinkan analisis trend. Sistem mengamati perubahan probabilitas, volatilitas, dan momentum market dari waktu ke waktu.',
+        'Data is stored historically, enabling trend analysis. The system observes probability changes, volatility, and market momentum over time.',
       color: 'ocean-teal',
     },
     {
       icon: Brain,
-      title: 'Analisis AI',
+      title: 'AI Analysis',
       description:
-        'Model AI menganalisis data market, trend historis, dan faktor kontekstual untuk menghasilkan estimasi probabilitas independen. AI juga memberikan insight tentang faktor pendukung dan hambatan.',
+        'AI model analyzes market data, historical trends, and contextual factors to generate independent probability estimates. AI also provides insights on supporting and limiting factors.',
       color: 'ocean-seafoam',
     },
     {
       icon: Shield,
-      title: 'Status Risiko',
+      title: 'Risk Status',
       description:
-        'Berdasarkan perbandingan antara probabilitas market dan estimasi AI, sistem memberikan status: Opportunity (peluang terbuka), Balanced (seimbang), atau Risk Zone (berisiko tinggi).',
+        'Based on comparing market probability and AI estimates, the system assigns status: Opportunity (open opportunity), Balanced (equilibrium), or Risk Zone (high risk).',
       color: 'status-balanced',
     },
   ];
@@ -49,10 +49,10 @@ export function HowItWorksPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Bagaimana <span className="text-gradient">Kalshi Pulse</span> Bekerja
+            How <span className="text-gradient">Kalshi Pulse</span> Works
           </h1>
           <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-            Layer analitik cerdas yang membaca data prediction market dan memberikan insight berbasis AI.
+            A smart analytics layer that reads prediction market data and provides AI-based insights.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export function HowItWorksPage() {
                     <div className="data-card flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-sm font-medium text-foreground-dim">
-                          Langkah {index + 1}
+                          Step {index + 1}
                         </span>
                       </div>
                       <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
@@ -94,7 +94,7 @@ export function HowItWorksPage() {
         {/* Key Features */}
         <div className="bg-background-secondary rounded-2xl p-8 md:p-12 mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Fitur <span className="text-gradient">Utama</span>
+            Key <span className="text-gradient">Features</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -102,9 +102,9 @@ export function HowItWorksPage() {
               <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-ocean-teal/10 flex items-center justify-center">
                 <RefreshCw className="w-7 h-7 text-ocean-teal" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Update Otomatis</h3>
+              <h3 className="text-lg font-semibold mb-2">Auto Update</h3>
               <p className="text-foreground-muted text-sm">
-                Data di-update setiap 10 menit secara otomatis untuk memastikan informasi selalu terkini.
+                Data is automatically updated every 10 minutes to ensure information is always current.
               </p>
             </div>
 
@@ -114,7 +114,7 @@ export function HowItWorksPage() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Historical Tracking</h3>
               <p className="text-foreground-muted text-sm">
-                Setiap pergerakan probabilitas disimpan untuk analisis trend jangka panjang.
+                Every probability movement is stored for long-term trend analysis.
               </p>
             </div>
 
@@ -124,7 +124,7 @@ export function HowItWorksPage() {
               </div>
               <h3 className="text-lg font-semibold mb-2">AI Insights</h3>
               <p className="text-foreground-muted text-sm">
-                AI memberikan analisis mendalam tentang faktor-faktor yang mempengaruhi probabilitas.
+                AI provides in-depth analysis of factors affecting probability.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export function HowItWorksPage() {
         {/* Status Explanation */}
         <div className="max-w-4xl mx-auto mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-            Memahami <span className="text-gradient">Status</span>
+            Understanding <span className="text-gradient">Status</span>
           </h2>
 
           <div className="space-y-6">
@@ -145,7 +145,7 @@ export function HowItWorksPage() {
               <div>
                 <h3 className="text-lg font-semibold text-status-opportunity mb-2">Opportunity</h3>
                 <p className="text-foreground-muted">
-                  Market dan data bergerak ke arah yang sama. AI mendeteksi bahwa probabilitas yang diberikan market mungkin undervalued berdasarkan analisis data. Ini menandakan potensi peluang yang bisa dipertimbangkan.
+                  Market and data move in the same direction. AI detects that market probability may be undervalued based on data analysis. This indicates potential opportunity worth considering.
                 </p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export function HowItWorksPage() {
               <div>
                 <h3 className="text-lg font-semibold text-status-balanced mb-2">Balanced</h3>
                 <p className="text-foreground-muted">
-                  Kedua sisi masih seimbang. Probabilitas AI dan market relatif sama. Ini menandakan bahwa market sudah mencerminkan informasi yang tersedia dengan baik. Informasi baru bisa mengubah arah.
+                  Both sides are still balanced. AI and market probability are relatively similar. This indicates the market already reflects available information well. New information could change direction.
                 </p>
               </div>
             </div>
@@ -171,7 +171,7 @@ export function HowItWorksPage() {
               <div>
                 <h3 className="text-lg font-semibold text-status-risk mb-2">Risk Zone</h3>
                 <p className="text-foreground-muted">
-                  Probabilitas tidak berpihak pada satu sisi dengan jelas, atau terdapat volatilitas tinggi. AI mendeteksi ketidakpastian yang signifikan. Langkah di sini penuh risiko dan memerlukan pertimbangan ekstra.
+                  Probability doesn't clearly favor either side, or there is high volatility. AI detects significant uncertainty. Actions here are risky and require extra consideration.
                 </p>
               </div>
             </div>
@@ -182,17 +182,17 @@ export function HowItWorksPage() {
         <div className="max-w-3xl mx-auto text-center mb-16 p-8 bg-background-tertiary/50 rounded-2xl border border-border">
           <h3 className="text-lg font-semibold mb-4">Disclaimer</h3>
           <p className="text-foreground-muted text-sm">
-            Kalshi Pulse adalah layer analitik independen dan <strong>bukan</strong> nasihat keuangan. 
-            Semua prediksi dan insight yang diberikan hanya berdasarkan analisis data yang tersedia 
-            dan tidak menjamin hasil tertentu. Pengguna bertanggung jawab penuh atas keputusan 
-            yang diambil berdasarkan informasi dari platform ini.
+            Kalshi Pulse is an independent analytics layer and is <strong>not</strong> financial advice.
+            All predictions and insights provided are based solely on available data analysis
+            and do not guarantee any specific outcome. Users are fully responsible for decisions
+            made based on information from this platform.
           </p>
         </div>
 
         {/* CTA */}
         <div className="text-center">
           <Link to="/dashboard" className="btn-primary inline-flex items-center gap-2">
-            Mulai Mengamati
+            Start Observing
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

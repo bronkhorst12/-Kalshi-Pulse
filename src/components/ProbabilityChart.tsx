@@ -41,7 +41,7 @@ export function ProbabilityChart({ data, height = 400 }: ProbabilityChartProps) 
     if (!chartInstance.current || !data || data.length === 0) return;
 
     const timestamps = data.map((d) =>
-      new Date(d.timestamp).toLocaleDateString('id-ID', {
+      new Date(d.timestamp).toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'short',
         hour: '2-digit',
@@ -214,7 +214,7 @@ export function ProbabilityChart({ data, height = 400 }: ProbabilityChartProps) 
   if (!data || data.length === 0) {
     return (
       <div className="flex items-center justify-center h-64 text-foreground-dim">
-        Tidak ada data untuk ditampilkan
+        No data to display
       </div>
     );
   }

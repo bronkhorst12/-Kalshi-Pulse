@@ -34,10 +34,10 @@ export function EventDetailPage() {
       if (response.success) {
         setData(response.data);
       } else {
-        setError('Gagal memuat detail event');
+        setError('Failed to load event details');
       }
     } catch (err) {
-      setError('Terjadi kesalahan saat memuat data');
+      setError('An error occurred while loading data');
       console.error(err);
     } finally {
       setLoading(false);
@@ -62,8 +62,8 @@ export function EventDetailPage() {
   }, [id]);
 
   const formatDate = (date: string | null) => {
-    if (!date) return 'Tidak ditentukan';
-    return new Date(date).toLocaleDateString('id-ID', {
+    if (!date) return 'Not specified';
+    return new Date(date).toLocaleDateString('en-US', {
       weekday: 'long',
       day: 'numeric',
       month: 'long',
@@ -102,10 +102,10 @@ export function EventDetailPage() {
       <div className="min-h-screen pt-20 pb-12 flex items-center justify-center">
         <div className="text-center">
           <AlertTriangle className="w-16 h-16 text-status-risk mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Terjadi Kesalahan</h2>
-          <p className="text-foreground-muted mb-4">{error || 'Event tidak ditemukan'}</p>
+          <h2 className="text-2xl font-bold mb-2">An Error Occurred</h2>
+          <p className="text-foreground-muted mb-4">{error || 'Event not found'}</p>
           <Link to="/dashboard" className="btn-secondary">
-            Kembali ke Dashboard
+            Back to Dashboard
           </Link>
         </div>
       </div>
@@ -124,7 +124,7 @@ export function EventDetailPage() {
           className="inline-flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
-          Kembali ke Dashboard
+          Back to Dashboard
         </Link>
 
         {/* Header */}
@@ -158,7 +158,7 @@ export function EventDetailPage() {
           <div className="data-card">
             <h2 className="text-lg font-semibold mb-6 flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-ocean-teal" />
-              Data Market
+              Market Data
             </h2>
             {market_data ? (
               <div className="space-y-6">
@@ -187,10 +187,9 @@ export function EventDetailPage() {
                   </div>
                   {/* 24h Change */}
                   <div className="bg-background-tertiary rounded-lg p-4">
-                    <div className="text-sm text-foreground-dim mb-2">Perubahan 24 Jam</div>
-                    <div className={`text-2xl font-semibold flex items-center gap-2 ${
-                      change24h > 0 ? 'text-status-opportunity' : change24h < 0 ? 'text-status-risk' : ''
-                    }`}>
+                    <div className="text-sm text-foreground-dim mb-2">24h Change</div>
+                    <div className={`text-2xl font-semibold flex items-center gap-2 ${change24h > 0 ? 'text-status-opportunity' : change24h < 0 ? 'text-status-risk' : ''
+                      }`}>
                       {change24h > 0 ? <TrendingUp className="w-5 h-5" /> : change24h < 0 ? <TrendingDown className="w-5 h-5" /> : null}
                       {change24h > 0 ? '+' : ''}{change24h.toFixed(1)}%
                     </div>
@@ -198,7 +197,7 @@ export function EventDetailPage() {
                 </div>
               </div>
             ) : (
-              <p className="text-foreground-muted">Tidak ada data market tersedia</p>
+              <p className="text-foreground-muted">No market data available</p>
             )}
           </div>
 
@@ -224,10 +223,9 @@ export function EventDetailPage() {
                 {/* Prediction & Probability */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-background-tertiary rounded-lg p-4">
-                    <div className="text-sm text-foreground-dim mb-2">Prediksi AI</div>
-                    <div className={`text-3xl font-bold flex items-center gap-2 ${
-                      ai_prediction.ai_winner === 'YES' ? 'text-ocean-teal' : 'text-status-risk'
-                    }`}>
+                    <div className="text-sm text-foreground-dim mb-2">AI Prediction</div>
+                    <div className={`text-3xl font-bold flex items-center gap-2 ${ai_prediction.ai_winner === 'YES' ? 'text-ocean-teal' : 'text-status-risk'
+                      }`}>
                       {ai_prediction.ai_winner === 'YES' ? <CheckCircle className="w-7 h-7" /> : <XCircle className="w-7 h-7" />}
                       {ai_prediction.ai_winner}
                     </div>
@@ -249,13 +247,13 @@ export function EventDetailPage() {
             ) : (
               <div className="text-center py-8">
                 <Brain className="w-12 h-12 text-foreground-dim mx-auto mb-4" />
-                <p className="text-foreground-muted mb-4">Belum ada prediksi AI</p>
+                <p className="text-foreground-muted mb-4">No AI prediction yet</p>
                 <button
                   onClick={handleGeneratePrediction}
                   disabled={generatingPrediction}
                   className="btn-secondary text-sm"
                 >
-                  Generate Prediksi
+                  Generate Prediction
                 </button>
               </div>
             )}
@@ -274,10 +272,10 @@ export function EventDetailPage() {
               <div className="bg-status-opportunity/5 border border-status-opportunity/20 rounded-lg p-4">
                 <div className="flex items-center gap-2 text-status-opportunity mb-3">
                   <CheckCircle className="w-5 h-5" />
-                  <span className="font-medium">Faktor Pendukung</span>
+                  <span className="font-medium">Supporting Factors</span>
                 </div>
                 <p className="text-sm text-foreground-muted">
-                  {ai_prediction.insight_faktor_pendukung || 'Data tidak cukup'}
+                  {ai_prediction.insight_faktor_pendukung || 'Insufficient data'}
                 </p>
               </div>
 
@@ -285,10 +283,10 @@ export function EventDetailPage() {
               <div className="bg-status-risk/5 border border-status-risk/20 rounded-lg p-4">
                 <div className="flex items-center gap-2 text-status-risk mb-3">
                   <XCircle className="w-5 h-5" />
-                  <span className="font-medium">Faktor Hambatan</span>
+                  <span className="font-medium">Limiting Factors</span>
                 </div>
                 <p className="text-sm text-foreground-muted">
-                  {ai_prediction.insight_faktor_hambatan || 'Data tidak cukup'}
+                  {ai_prediction.insight_faktor_hambatan || 'Insufficient data'}
                 </p>
               </div>
 
@@ -296,10 +294,10 @@ export function EventDetailPage() {
               <div className="bg-status-balanced/5 border border-status-balanced/20 rounded-lg p-4">
                 <div className="flex items-center gap-2 text-status-balanced mb-3">
                   <ShieldAlert className="w-5 h-5" />
-                  <span className="font-medium">Risiko</span>
+                  <span className="font-medium">Risk</span>
                 </div>
                 <p className="text-sm text-foreground-muted">
-                  {ai_prediction.insight_risiko || 'Data tidak cukup'}
+                  {ai_prediction.insight_risiko || 'Insufficient data'}
                 </p>
               </div>
             </div>
@@ -308,14 +306,14 @@ export function EventDetailPage() {
 
         {/* Chart Section */}
         <div className="mb-8">
-          <h2 className="text-lg font-semibold mb-4">Grafik Pergerakan Probabilitas</h2>
+          <h2 className="text-lg font-semibold mb-4">Probability Movement Chart</h2>
           <ProbabilityChart data={chart_data} height={450} />
         </div>
 
         {/* Closing Text */}
         <div className="text-center py-8 border-t border-border">
           <p className="text-lg text-foreground-muted italic">
-            "Sisa keputusan ada di tangan Anda."
+            "The final decision is in your hands."
           </p>
         </div>
       </div>

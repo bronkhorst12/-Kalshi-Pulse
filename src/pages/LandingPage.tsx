@@ -9,7 +9,7 @@ export function LandingPage() {
         {/* Background Effects */}
         <div className="absolute inset-0 grid-bg" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
-        
+
         {/* Animated Data Lines - Ocean themed */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(5)].map((_, i) => (
@@ -43,20 +43,20 @@ export function LandingPage() {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-foreground-muted max-w-3xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Kalshi Pulse membaca probabilitas dan pergerakan di balik prediction market.
+            Kalshi Pulse reads probabilities and movements behind prediction markets.
           </p>
 
           {/* CTA Button */}
           <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Link to="/dashboard" className="btn-primary btn-press inline-flex items-center gap-2 text-lg group">
-              Masuk Dashboard
+              Enter Dashboard
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
           {/* Tagline */}
           <p className="text-sm text-foreground-dim mt-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            Angka bergerak. Probabilitas berubah. Anda mengamati.
+            Numbers move. Probabilities shift. You observe.
           </p>
         </div>
 
@@ -67,10 +67,10 @@ export function LandingPage() {
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            <span className="text-gradient">Analitik Cerdas</span> untuk Prediction Market
+            <span className="text-gradient">Smart Analytics</span> for Prediction Markets
           </h2>
           <p className="text-foreground-muted text-center max-w-2xl mx-auto mb-16">
-            Layer analitik yang membaca data, menganalisis trend, dan memberikan insight berbasis AI.
+            An analytics layer that reads data, analyzes trends, and provides AI-based insights.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -79,9 +79,9 @@ export function LandingPage() {
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-ocean-teal/10 flex items-center justify-center group-hover:bg-ocean-teal/20 transition-all duration-300 group-hover:scale-110">
                 <BarChart2 className="w-8 h-8 text-ocean-teal transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Data Real-Time</h3>
+              <h3 className="text-xl font-semibold mb-3">Real-Time Data</h3>
               <p className="text-foreground-muted">
-                Membaca dan menyimpan data market dari Kalshi secara berkala untuk analisis historis.
+                Reads and stores market data from Kalshi periodically for historical analysis.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export function LandingPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">AI Prediction</h3>
               <p className="text-foreground-muted">
-                Model AI menganalisis trend dan memberikan estimasi probabilitas tambahan.
+                AI model analyzes trends and provides additional probability estimates.
               </p>
             </div>
 
@@ -101,9 +101,9 @@ export function LandingPage() {
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-status-balanced/10 flex items-center justify-center group-hover:bg-status-balanced/20 transition-all duration-300 group-hover:scale-110">
                 <Shield className="w-8 h-8 text-status-balanced transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Status Risiko</h3>
+              <h3 className="text-xl font-semibold mb-3">Risk Status</h3>
               <p className="text-foreground-muted">
-                Indikator status membantu memahami tingkat peluang dan risiko setiap event.
+                Status indicators help understand the opportunity and risk level of each event.
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export function LandingPage() {
       <section className="py-24 bg-background-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Memahami <span className="text-gradient">Status Risiko</span>
+            Understanding <span className="text-gradient">Risk Status</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -125,7 +125,7 @@ export function LandingPage() {
                 <h3 className="text-xl font-semibold text-status-opportunity">Opportunity</h3>
               </div>
               <p className="text-foreground-muted text-sm">
-                Market dan data bergerak ke arah yang sama. Peluang terbuka.
+                Market and data move in the same direction. Opportunity opens.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ export function LandingPage() {
                 <h3 className="text-xl font-semibold text-status-balanced">Balanced</h3>
               </div>
               <p className="text-foreground-muted text-sm">
-                Kedua sisi masih seimbang. Informasi baru bisa mengubah arah.
+                Both sides are still balanced. New information could change direction.
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export function LandingPage() {
                 <h3 className="text-xl font-semibold text-status-risk">Risk Zone</h3>
               </div>
               <p className="text-foreground-muted text-sm">
-                Probabilitas tidak berpihak pada satu sisi. Langkah di sini penuh risiko.
+                Probability doesn't favor either side. Actions here are high risk.
               </p>
             </div>
           </div>
@@ -158,13 +158,13 @@ export function LandingPage() {
       <section className="py-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Siap Membaca <span className="text-gradient">Pergerakan Market?</span>
+            Ready to Read <span className="text-gradient">Market Movements?</span>
           </h2>
           <p className="text-foreground-muted mb-8 max-w-xl mx-auto">
-            Dashboard Kalshi Pulse menampilkan semua event aktif dengan data market dan prediksi AI.
+            Kalshi Pulse dashboard displays all active events with market data and AI predictions.
           </p>
           <Link to="/dashboard" className="btn-primary inline-flex items-center gap-2">
-            Buka Dashboard
+            Open Dashboard
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -179,11 +179,11 @@ export function LandingPage() {
               <span className="font-semibold">Kalshi Pulse</span>
             </div>
             <p className="text-sm text-foreground-dim">
-              Layer analitik untuk prediction market. Bukan nasihat keuangan.
+              Analytics layer for prediction markets. Not financial advice.
             </p>
             <div className="flex items-center gap-4 text-sm text-foreground-dim">
               <Link to="/how-it-works" className="hover:text-foreground transition-colors">
-                Cara Kerja
+                How It Works
               </Link>
             </div>
           </div>
