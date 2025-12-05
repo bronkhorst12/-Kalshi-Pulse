@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Ocean Depths Theme - Light Mode */
+    --background: #f8fafb;
+    --background-secondary: #f1f5f8;
+    --background-tertiary: #e8eef3;
+    --foreground: #1a2332;
+    --foreground-muted: #5a6a7a;
+    --ocean-teal: #2d8b8b;
+    --ocean-seafoam: #457b7b;
+    --ocean-coral: #d4685a;
+    --border: #d1dbe5;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: #f8fafb;
+    background-image: 
+      radial-gradient(ellipse at top, rgba(45, 139, 139, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(69, 123, 123, 0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/95 backdrop-blur-xl border border-border rounded-lg;
+    box-shadow: 0 2px 12px rgba(26, 35, 50, 0.06), 0 1px 4px rgba(26, 35, 50, 0.04);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(45, 139, 139, 0.3), 0 0 20px rgba(45, 139, 139, 0.15);
+  }
+
+  .status-opportunity {
+    @apply text-status-opportunity bg-status-opportunity/10 border-status-opportunity/20;
+  }
+
+  .status-balanced {
+    @apply text-status-balanced bg-status-balanced/10 border-status-balanced/20;
+  }
+
+  .status-risk {
+    @apply text-status-risk bg-status-risk/10 border-status-risk/20;
+  }
+
+  .btn-primary {
+    @apply bg-ocean-teal font-semibold px-6 py-3 rounded-lg 
+           hover:bg-ocean-teal/90 transition-all duration-200
+           shadow-[0_2px_8px_rgba(45,139,139,0.25)] hover:shadow-[0_4px_16px_rgba(45,139,139,0.35)]
+           active:scale-[0.97] active:shadow-[0_1px_4px_rgba(45,139,139,0.2)];
+    color: #ffffff;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-ocean-teal text-ocean-teal font-semibold px-6 py-3 rounded-lg
+           hover:bg-ocean-teal/10 transition-all duration-200
+           active:scale-[0.97];
+  }
+
+  .data-card {
+    @apply bg-white border border-border rounded-lg p-4
+           hover:border-ocean-teal/40 transition-all duration-300;
+    box-shadow: 0 2px 8px rgba(26, 35, 50, 0.06);
+  }
+
+  .chart-container {
+    @apply bg-white/80 backdrop-blur-sm border border-border rounded-lg p-4;
+  }
+
+  .ocean-glow {
+    box-shadow: 0 0 30px rgba(45, 139, 139, 0.1), 0 0 60px rgba(69, 123, 123, 0.05);
+  }
+
+  /* Hover lift with ocean glow */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(45, 139, 139, 0.12),
+                0 4px 12px rgba(26, 35, 50, 0.08);
+  }
+
+  /* Icon glow on hover */
+  .icon-glow {
+    @apply transition-all duration-300;
+  }
+  .icon-glow:hover {
+    filter: drop-shadow(0 0 6px rgba(45, 139, 139, 0.4));
+    transform: scale(1.1);
+  }
+
+  /* Shimmer background effect */
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(45, 139, 139, 0.06) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Button press effect */
+  .btn-press {
+    @apply transition-transform duration-100;
+  }
+  .btn-press:active {
+    transform: scale(0.97);
+  }
+
+  /* Nav link with animated underline */
+  .nav-link-animated {
+    @apply relative;
+  }
+  .nav-link-animated::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-ocean-teal scale-x-0 origin-left transition-transform duration-300;
+  }
+  .nav-link-animated:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Card with border glow on hover */
+  .card-glow-hover {
+    @apply transition-all duration-300;
+  }
+  .card-glow-hover:hover {
+    border-color: rgba(45, 139, 139, 0.5);
+    box-shadow: 0 0 16px rgba(45, 139, 139, 0.1),
+                0 6px 24px rgba(26, 35, 50, 0.1);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ocean-teal to-ocean-seafoam;
+  }
+
+  .text-ocean-teal {
+    color: #2d8b8b;
+  }
+
+  .text-ocean-seafoam {
+    color: #a8dadc;
+  }
+
+  .text-ocean-coral {
+    color: #e07a5f;
+  }
+
+  .bg-ocean-teal {
+    background-color: #2d8b8b;
+  }
+
+  .bg-ocean-seafoam {
+    background-color: #a8dadc;
+  }
+
+  .grid-bg {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(168,218,220,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(168,218,220,0.03) 1px, transparent 1px);
+  }
+}
+
+/* Scrollbar styling - Ocean Depths Light */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4d1dc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8b9c8;
+}
+
+/* Selection - Ocean Depths Light */
+::selection {
+  background: rgba(45, 139, 139, 0.25);
+  color: #1a2332;
+}
