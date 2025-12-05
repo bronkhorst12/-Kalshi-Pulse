@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Activity, TrendingUp, Brain, Shield, ArrowRight, BarChart2, Zap } from 'lucide-react';
+import { TrendingUp, Brain, Shield, ArrowRight, BarChart2, Zap } from 'lucide-react';
 
 export function LandingPage() {
   return (
@@ -28,10 +28,11 @@ export function LandingPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <div className="relative">
-              <Activity className="w-20 h-20 text-ocean-teal animate-pulse-glow" />
-              <div className="absolute inset-0 blur-2xl bg-ocean-teal/30" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-48 h-48 object-contain"
+            />
           </div>
 
           {/* Headline */}
@@ -175,8 +176,7 @@ export function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Activity className="w-5 h-5 text-ocean-teal" />
-              <span className="font-semibold">Kalshi Pulse</span>
+              <img src="/logo.png" alt="Logo" className="h-8 w-auto object-contain" />
             </div>
             <p className="text-sm text-foreground-dim">
               Analytics layer for prediction markets. Not financial advice.
