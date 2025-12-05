@@ -29,7 +29,7 @@ module.exports = {
 				},
 				// Ocean Depths Accent colors (adjusted for light mode)
 				ocean: {
-					teal: '#2d8b8b',
+					teal: '#3ace9d',
 					seafoam: '#457b7b',
 					deep: '#1a2332',
 					coral: '#d4685a',
@@ -75,11 +75,11 @@ module.exports = {
 			},
 			keyframes: {
 				'pulse-glow': {
-					'0%, 100%': { 
-						boxShadow: '0 0 5px rgba(45, 139, 139, 0.2), 0 0 10px rgba(45, 139, 139, 0.08)' 
+					'0%, 100%': {
+						boxShadow: '0 0 5px rgba(45, 139, 139, 0.2), 0 0 10px rgba(45, 139, 139, 0.08)'
 					},
-					'50%': { 
-						boxShadow: '0 0 15px rgba(45, 139, 139, 0.35), 0 0 30px rgba(45, 139, 139, 0.15)' 
+					'50%': {
+						boxShadow: '0 0 15px rgba(45, 139, 139, 0.35), 0 0 30px rgba(45, 139, 139, 0.15)'
 					},
 				},
 				'wave': {

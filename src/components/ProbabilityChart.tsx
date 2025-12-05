@@ -146,11 +146,11 @@ export function ProbabilityChart({ data, height = 400 }: ProbabilityChartProps) 
           symbol: 'circle',
           symbolSize: 6,
           lineStyle: {
-            color: '#2d8b8b',
+            color: '#3ace9d',
             width: 3,
           },
           itemStyle: {
-            color: '#2d8b8b',
+            color: '#3ace9d',
           },
           areaStyle: {
             color: {
