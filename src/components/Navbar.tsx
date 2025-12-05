@@ -50,7 +50,7 @@ export function Navbar() {
 
             {/* X (Twitter) Link */}
             <a
-              href="https://x.com/X402CoreWork01?t=iZrE7zsI5G_Y5EInxTtdjQ&s=09"
+              href="https://x.com/KalshPulse"
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 group/nav text-foreground-muted hover:text-foreground hover:bg-background-tertiary"
