@@ -2,48 +2,48 @@
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://yse17yyy2zam.space.minimax.io)
 
-**Kalshi Pulse** adalah layer analitik canggih yang duduk di atas platform prediction market Kalshi. Sistem ini membaca data event dari Kalshi, menganalisis pergerakan probabilitas, dan menggunakan AI untuk memberikan insight dan prediksi dengan status risiko yang jelas.
+**Kalshi Pulse** is an advanced analytics layer that sits on top of the Kalshi prediction market platform. The system reads event data from Kalshi, analyzes probability movements, and uses AI to provide insights and predictions with clear risk status.
 
-## 🌟 Fitur Utama
+## 🌟 Key Features
 
-### 🎯 Analisis Real-Time
-- Data market Kalshi real-time dengan probabilitas YES/NO
-- Historical data dan trend analysis
-- Volume tracking dan 24h price movement
+### 🎯 Real-Time Analysis
+- Real-time Kalshi market data with YES/NO probabilities
+- Historical data and trend analysis
+- Volume tracking and 24h price movement
 
 ### 🤖 AI-Powered Predictions  
-- Integrasi dengan AI MiniMax untuk analisis mendalam
-- Prediksi probabilitas berdasarkan data historis dan market trends
-- Status risiko: **Opportunity**, **Balanced**, **Risk Zone**
+- Integration with MiniMax AI for deep analysis
+- Probability predictions based on historical data and market trends
+- Risk status: **Opportunity**, **Balanced**, **Risk Zone**
 
 ### 📊 Visual Analytics
-- Grafik pergerakan probabilitas real-time
-- Event dashboard dengan filtering capabilities
-- Insight analysis dengan faktor pendukung dan hambatan
+- Real-time probability movement charts
+- Event dashboard with filtering capabilities
+- Insight analysis with supporting factors and obstacles
 
 ### ⚡ Smart Status System
-- **Opportunity**: Market dan AI bergerak ke arah yang sama
-- **Balanced**: Kedua sisi masih seimbang
-- **Risk Zone**: Probabilitas tidak berpihak pada satu sisi
+- **Opportunity**: Market and AI are moving in the same direction
+- **Balanced**: Both sides are still in equilibrium
+- **Risk Zone**: Probability does not favor one side
 
 ## 🏗️ Tech Stack
 
 ### Frontend
 - **React 18** + **TypeScript**
-- **Vite** untuk build tooling
-- **TailwindCSS** untuk styling
-- **ECharts** untuk data visualization
-- **Lucide React** untuk icons
+- **Vite** for build tooling
+- **TailwindCSS** for styling
+- **ECharts** for data visualization
+- **Lucide React** for icons
 
 ### Backend
 - **Supabase** (PostgreSQL + Edge Functions)
-- **Deno** runtime untuk Edge Functions
-- **Cron Jobs** untuk scheduled data updates
+- **Deno** runtime for Edge Functions
+- **Cron Jobs** for scheduled data updates
 - **Real-time subscriptions**
 
 ### External APIs
-- **Kalshi API** untuk market data
-- **MiniMax AI** untuk prediction analysis
+- **Kalshi API** for market data
+- **MiniMax AI** for prediction analysis
 
 ## 📁 Project Structure
 
@@ -118,9 +118,9 @@ CREATE TABLE event_ai_prediction (
     ai_yes_probability DECIMAL(5,2),
     ai_winner TEXT CHECK (ai_winner IN ('YES', 'NO')),
     status TEXT CHECK (status IN ('Opportunity', 'Balanced', 'Risk Zone')),
-    insight_faktor_pendukung TEXT,
-    insight_faktor_hambatan TEXT,
-    insight_risiko TEXT
+    insight_supporting_factors TEXT,
+    insight_obstacles TEXT,
+    insight_risks TEXT
 );
 ```
 
@@ -143,7 +143,7 @@ cd KALSHPULSE
 2. **Install dependencies**
 ```bash
 npm install
-# atau
+# or
 pnpm install
 ```
 
@@ -233,29 +233,29 @@ KALSHI_API_BASE=https://api.elections.kalshi.com/trade-api/v2
 
 ### MiniMax AI Prompt Template
 ```
-Analisa data berikut.
+Analyze the following data.
 Event: {{event_title}}
-Market Yes Probability: {{market_yes}} persen
-Market No Probability: {{market_no}} persen
+Market Yes Probability: {{market_yes}} percent
+Market No Probability: {{market_no}} percent
 Volume: {{volume}}
-Price movement 24h: {{change_24h}} persen
+Price movement 24h: {{change_24h}} percent
 Historical trend: {{historical_pattern}}
 Deadline: {{deadline}}
 
-Instruksi:
-1. Hitung probabilitas outcome berdasarkan data
-2. Tentukan prediksi YES atau NO
-3. Tentukan status: Opportunity/Balanced/Risk Zone
-4. Berikan insight berbasis data
+Instructions:
+1. Calculate outcome probability based on data
+2. Determine YES or NO prediction
+3. Determine status: Opportunity/Balanced/Risk Zone
+4. Provide data-based insights
 
-Format output:
+Output format:
 Prediction: YES/NO
-AI Probability: {{angka_persen}}
+AI Probability: {{percentage_value}}
 Status: Opportunity/Balanced/Risk Zone
 Insight:
-• Faktor pendukung
-• Faktor hambatan  
-• Risiko/variabel penting
+• Supporting factors
+• Obstacles  
+• Risks/important variables
 ```
 
 ## 📊 Analytics Features
